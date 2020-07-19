@@ -8,6 +8,7 @@
 который по кнопке разворачивает кластер и выдает порт наружу  
   
 ## Решение  
+https://mysqlrelease.com/2018/03/docker-compose-setup-for-innodb-cluster/
   
 Предварительная настройка ВМ  
 
