@@ -11,7 +11,7 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 cd /vagrant/mysql-docker-compose-examples/innodb-cluster/ && docker-compose up
 ```
 
-После деплоя стенда `MySQL Router` будет доступен с хзстовой виртуальной машины по команде
+После деплоя стенда `MySQL Router` будет доступен от хостовой виртуальной машины по команде
 
 ```
 mysql -h  172.18.0.6 -u root  -P 6446
