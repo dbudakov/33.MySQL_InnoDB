@@ -10,7 +10,7 @@
 ## Решение  
 https://mysqlrelease.com/2018/03/docker-compose-setup-for-innodb-cluster/
   
-Предварительная настройка ВМ  
+Предварительная настройка ВМ включена(!) в Vagrantfile  
 
 ```
 # Install docker and docker-compose
