@@ -11,6 +11,20 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 cd /vagrant/mysql-docker-compose-examples/innodb-cluster/ && docker-compose up
 ```
 
+После деплоя стенда `MySQL Router` будет доступен с хзстовой виртуальной машины по команде
+
+```
+mysql -h  172.18.0.6 -u root  -P 6446
+```
+
+Для доступа к базе используется другая учетная запись
+
+```
+mysql -h  172.18.0.6 -u dbwebapp -pdbwebapp  -P 6446
+```
+
+Далее для проверки работы кластера предлагаются следующие действия
+
 Запись ключа доступа для передачи команд
 
 ```
@@ -26,7 +40,7 @@ docker exec -it innodb-cluster_mysql-router_1 bash -c "echo password=mysql >> /r
 docker exec -it innodb-cluster_mysql-router_1 bash -c 'mysql -e "select * from mysql_innodb_cluster_metadata.hosts;"'
 ```
 
-Создание таблицы и записей
+Создание таблицы и записей, с использованием `PRIMARY KEY`
 
 ```
 # Create table

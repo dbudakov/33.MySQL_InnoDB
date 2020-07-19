@@ -11,13 +11,18 @@ Vagrant.configure("2") do |config|
 		os.vm.boot_timeout = 180
 		os.vm.provision "shell", inline: <<SHELL
 
+			# Install MySQL
+			yum install https://repo.percona.com/yum/percona-release-latest.noarch.rpm -y
+			yum install  Percona-Server-server-57  -y
+			systemctl enable mysqld && systemctl start mysqld
+			echo [client] > /root/.my.cnf
+			echo password=mysql >> /root/.my.cnf
+
 			# Down Selinux
 			setenforce 0
 
 			# Install docker and docker-compose
 			yum install -y docker && systemctl start docker && systemctl enable docker
-
-			# hz
 			sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 			sudo chmod +x /usr/local/bin/docker-compose
 			sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
@@ -26,6 +31,7 @@ Vagrant.configure("2") do |config|
 			cd /vagrant/mysql-docker-compose-examples/innodb-cluster/
 			sudo docker-compose up &
 			sleep 180
+
 SHELL
 	end
 ## Устанавливаем связь между каталогом "./src" хост-системы
