@@ -80,5 +80,6 @@ docker exec -it innodb-cluster_mysql-server-2_1 bash -c "echo password=dbwebapp 
 docker exec -it innodb-cluster_mysql-server-2_1 bash -c 'mysql -u dbwebapp -e "SELECT * FROM dbwebappdb.Customers";'
 ```
 ### Дополнительно  
-[ProxySQL Admin](https://github.com/percona/proxysql-admin-tool)    
-[Load balancing with ProxySQL](https://www.percona.com/doc/percona-xtradb-cluster/LATEST/howtos/proxysql.html)   
+[ProxySQL Admin](https://github.com/percona/proxysql-admin-tool)     
+[Load balancing with ProxySQL](https://www.percona.com/doc/percona-xtradb-cluster/LATEST/howtos/proxysql.html)    
+Percona Monitoring & Management (PMM) Essentials [link](https://dinfratechsource.com/2018/11/10/percona-monitoring-management-pmm-essentials/)  
